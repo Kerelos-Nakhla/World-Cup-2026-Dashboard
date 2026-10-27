@@ -202,83 +202,67 @@ AVERAGE(fact_matches[attendance])
 
 ## 🖼️ Dashboard Visual Tour & Architecture
 
-The report contains **6 dedicated pages** and multiple analytical drill-downs:
+The report screenshots below reflect the newly uploaded dashboard pages.
 
-### 1. Tournament Executive Landing Portal (`Landing Page.png`)
-* Central navigation launchpad with FIFA World Cup 2026 branding, host country flags, and direct links to all operational modules.
-
+### 1. Tournament Executive Landing Portal
 <p align="center">
   <img src="./Dashboard%20Previews/Landing%20Page.png" width="92%" alt="Landing Page Preview" />
 </p>
 
----
-
-### 2. High-Level Tournament Overview (`Overview.png`)
-* Executive KPI scorecard: Total Matches (`104`), Total Goals (`308`), Attendance (`5.85M`), Stadiums (`16`), and Referees (`25`).
-* Goals timeline progression, attendance distribution by stage, and country breakdown.
-
+### 2. Overview Page 1
 <p align="center">
-  <img src="./Dashboard%20Previews/Overview.png" width="92%" alt="Tournament Overview Preview" />
+  <img src="./Dashboard%20Previews/1-%20Overview%20Page.png" width="92%" alt="Overview Page 1 Preview" />
 </p>
 
----
-
-### 3. Group Stage Standings & Match Dynamics (`Group Stage.png`)
-* Interactive group selector for Groups A through L with dynamic tables for Points, Played, Won, Drawn, Lost, GD, and Qualification status.
-
+### 3. Overview Page 2
 <p align="center">
-  <img src="./Dashboard%20Previews/Group%20Stage.png" width="92%" alt="Group Stage Preview" />
+  <img src="./Dashboard%20Previews/2-%20Overview%20Page.png" width="92%" alt="Overview Page 2 Preview" />
 </p>
 
----
-
-### 4. Knockout Bracket & Tournament Tree (`Knockout Stage.png`)
-* Complete bracket visualization tracking qualified teams through Round of 32, Round of 16, Quarter Finals, Semi Finals, Third Place, and the Final.
-
+### 4. Group Stage Standings & Match Dynamics
 <p align="center">
-  <img src="./Dashboard%20Previews/Knockout%20Stage.png" width="92%" alt="Knockout Stage Preview" />
+  <img src="./Dashboard%20Previews/Group%20Page.png" width="92%" alt="Group Stage Preview" />
 </p>
 
----
-
-### 5. Detailed Match-by-Match Telemetry (`Matches.png`)
-* Comprehensive match schedule, kickoff times, venue links, referee assignments, scores, and head-to-head records.
-
+### 5. Knockout Bracket & Tournament Tree
 <p align="center">
-  <img src="./Dashboard%20Previews/Matches.png" width="92%" alt="Matches Preview" />
+  <img src="./Dashboard%20Previews/Knockout%20Page.png" width="92%" alt="Knockout Stage Preview" />
 </p>
 
----
-
-### 6. Player Performance, Golden Boot & Discipline (`Top Scorers.png` / `Discipline Players.png` / `Top Own Scorers.png`)
-* Golden Boot race leaderboards with player cards, goals per match, club/national affiliation, disciplinary card sanctions, and own-goal tallies.
-
+### 6. Detailed Match-by-Match Telemetry
 <p align="center">
-  <img src="./Dashboard%20Previews/Top%20Scorers.png" width="48%" alt="Top Scorers Preview" />
-  <img src="./Dashboard%20Previews/Top%20Own%20Scorers.png" width="48%" alt="Top Own Scorers Preview" />
-  <img src="./Dashboard%20Previews/Discipline%20Players.png" width="48%" alt="Discipline Players Preview" />
+  <img src="./Dashboard%20Previews/Matches%20Page.png" width="92%" alt="Matches Preview" />
 </p>
 
----
-
-### 7. Stadium Infrastructure & Referee Operations (`Stadiums.png` / `Referees.png`)
-* Interactive venue map and cards detailing city, capacity, matches hosted, and officiating appointment workloads.
-
+### 7. Top Scorers
 <p align="center">
-  <img src="./Dashboard%20Previews/Stadiums.png" width="48%" alt="Stadiums Preview" />
-  <img src="./Dashboard%20Previews/Referees.png" width="48%" alt="Referees Preview" />
+  <img src="./Dashboard%20Previews/Top%20Scorers%20Page.png" width="92%" alt="Top Scorers Preview" />
 </p>
 
----
+### 8. Top Own Goal Scorers
+<p align="center">
+  <img src="./Dashboard%20Previews/Top%20Own%20Goal%20Scorers%20Page.png" width="92%" alt="Top Own Goal Scorers Preview" />
+</p>
 
-### 8. Star Schema Model Architecture (`Model.png`)
-* Full entity-relationship model linking match facts, standings, player goals, and dimensional tables.
+### 9. Player Discipline
+<p align="center">
+  <img src="./Dashboard%20Previews/Discipline%20Page.png" width="92%" alt="Discipline Players Preview" />
+</p>
 
+### 10. Stadium Infrastructure
+<p align="center">
+  <img src="./Dashboard%20Previews/Statdiums%20Page.png" width="92%" alt="Stadiums Preview" />
+</p>
+
+### 11. Referee Operations
+<p align="center">
+  <img src="./Dashboard%20Previews/Referees%20Page.png" width="92%" alt="Referees Preview" />
+</p>
+
+### 12. Data Model
 <p align="center">
   <img src="./Dashboard%20Previews/Model.png" width="92%" alt="Model Architecture Preview" />
 </p>
-
----
 
 ## 🏗️ Data Architecture & Star Schema Design
 
@@ -357,38 +341,25 @@ The data pipeline standardizes disparate match logs and tournament assets:
 ## 📁 Repository Structure
 
 ```
-Kerelos-Nakhla/The-Road-To-Glory/
+World-Cup-2026-Dashboard/
 │
-├── Assets/                        # Brand wallpapers and vector iconography
-├── Dashboard Previews/             # High-resolution report page screenshots
-│   ├── Discipline Players.png     # Disciplinary cautions & expulsions
-│   ├── Group Stage.png            # Groups A-L interactive standings
-│   ├── Knockout Stage.png         # 32-team tournament knockout bracket
-│   ├── Landing Page.png           # Executive navigation portal
-│   ├── Matches.png                # Match-by-match schedule & results
-│   ├── Model.png                  # Multi-fact Star Schema data model
-│   ├── Overview.png               # High-level tournament KPI scorecard
-│   ├── Referees.png               # Match official assignments & workloads
-│   ├── Stadiums.png               # Venue capacities & city infrastructure
-│   ├── Top Own Scorers.png        # Own goal tallies and impact analysis
-│   └── Top Scorers.png            # Golden Boot leaderboard & scoring rates
-│
-├── Data/                          # Dimensional Excel workbooks & match facts
-│   ├── dim_group.xlsx             # Group stage dimension table
-│   ├── dim_players.xlsx           # Player registry & profile dimension
-│   ├── dim_refereees.xlsx         # Match officials dimension table
-│   ├── dim_stadiums.xlsx          # Host stadiums & capacity dimension
-│   ├── dim_stage.xlsx             # Tournament stages (Group through Final)
-│   ├── dim_teams.xlsx             # 48 national teams dimension table
-│   ├── fact_group_standings.xlsx  # Official group stage points & records
-│   ├── fact_match_teams.xlsx      # Team-level match performance fact
-│   ├── fact_matches.xlsx          # Fixtures, attendance & scorelines fact
-│   ├── fact_player_discipline.xlsx# Cards and disciplinary actions fact
-│   └── fact_player_goals.xlsx     # Granular goal-level event fact table
-│
-├── LICENSE                        # MIT License
-├── README.md                      # Comprehensive project documentation
-└── THE ROAD TO GLORY.pbix         # Production Power BI dashboard file
+├── Assets/                        # Brand wallpapers and tournament imagery
+├── Dashboard Previews/             # Latest dashboard screenshots
+│   ├── Landing Page.png
+│   ├── 1- Overview Page.png
+│   ├── 2- Overview Page.png
+│   ├── Group Page.png
+│   ├── Knockout Page.png
+│   ├── Matches Page.png
+│   ├── Top Scorers Page.png
+│   ├── Top Own Goal Scorers Page.png
+│   ├── Discipline Page.png
+│   ├── Statdiums Page.png
+│   ├── Referees Page.png
+│   ├── Model.png
+├── Data/                           # Dimensional Excel workbooks and match facts
+├── LICENSE                         # MIT License
+└── README.md                       # Project documentation and analysis
 ```
 
 ---
